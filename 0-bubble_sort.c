@@ -1,4 +1,5 @@
 #include "sort.h"
+#include <stddef.h>
 
 /**
  * bubble_sort - The simplest sorting function that repeatedly swap adjacent element that are in wrong order
@@ -10,10 +11,11 @@
  */
 void bubble_sort(int *array, size_t size)
 {
-	int i;
-	int j;
-	int temp;
+	size_t i, j;
+	size_t temp;
 	
+	if (size < 2)
+		return;
 	/* First loop iterate the items in array*/
 	for (i = 0; i < size - 1; i++)
 	{
